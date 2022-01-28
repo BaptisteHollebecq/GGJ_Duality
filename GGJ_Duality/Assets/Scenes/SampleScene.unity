@@ -255,9 +255,10 @@ GameObject:
   m_Component:
   - component: {fileID: 774695363}
   - component: {fileID: 774695365}
+  - component: {fileID: 774695364}
   m_Layer: 0
   m_Name: CamRightEye
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -276,6 +277,20 @@ Transform:
   m_Father: {fileID: 145441357}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &774695364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774695362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7a4cc4c1556681438081dfc2cc72f91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rightEye: 1
+  _angleRangeY: {x: 1, y: 2}
 --- !u!20 &774695365
 Camera:
   m_ObjectHideFlags: 0
@@ -329,13 +344,28 @@ GameObject:
   m_Component:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
+  - component: {fileID: 963194226}
   m_Layer: 0
   m_Name: CamLeftEye
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &963194226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7a4cc4c1556681438081dfc2cc72f91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rightEye: 0
+  _angleRangeY: {x: 360, y: 270}
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -603,7 +633,7 @@ Transform:
   m_Children:
   - {fileID: 145441357}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2122735727
 MonoBehaviour:
@@ -679,10 +709,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1001954634505597100, guid: 54858811123abaa4fa5c3e8fbf52f04f,
+        type: 3}
+      propertyPath: l_Camera
+      value: 
+      objectReference: {fileID: 963194228}
+    - target: {fileID: 1001954634505597100, guid: 54858811123abaa4fa5c3e8fbf52f04f,
+        type: 3}
+      propertyPath: r_Camera
+      value: 
+      objectReference: {fileID: 774695363}
+    - target: {fileID: 1001954634505597100, guid: 54858811123abaa4fa5c3e8fbf52f04f,
+        type: 3}
+      propertyPath: l_angleRangeY.x
+      value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 1001954634505597100, guid: 54858811123abaa4fa5c3e8fbf52f04f,
+        type: 3}
+      propertyPath: l_angleRangeY.y
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 1001954634505597100, guid: 54858811123abaa4fa5c3e8fbf52f04f,
+        type: 3}
+      propertyPath: r_angleRangeY.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1001954634505597100, guid: 54858811123abaa4fa5c3e8fbf52f04f,
+        type: 3}
+      propertyPath: r_angleRangeY.y
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 1118315288407216040, guid: 54858811123abaa4fa5c3e8fbf52f04f,
         type: 3}
       propertyPath: m_Name
       value: RENDUGAME
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028749072267707933, guid: 54858811123abaa4fa5c3e8fbf52f04f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028749072267707933, guid: 54858811123abaa4fa5c3e8fbf52f04f,
+        type: 3}
+      propertyPath: m_TagString
+      value: MainCamera
       objectReference: {fileID: 0}
     - target: {fileID: 4318163572774666474, guid: 54858811123abaa4fa5c3e8fbf52f04f,
         type: 3}
@@ -722,7 +792,7 @@ PrefabInstance:
     - target: {fileID: 4318163572774666474, guid: 54858811123abaa4fa5c3e8fbf52f04f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4318163572774666474, guid: 54858811123abaa4fa5c3e8fbf52f04f,
         type: 3}
@@ -737,6 +807,11 @@ PrefabInstance:
     - target: {fileID: 4318163572774666474, guid: 54858811123abaa4fa5c3e8fbf52f04f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6149775457430724692, guid: 54858811123abaa4fa5c3e8fbf52f04f,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7335653211477413656, guid: 54858811123abaa4fa5c3e8fbf52f04f,
