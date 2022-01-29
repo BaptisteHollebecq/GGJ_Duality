@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: VertexColor
+  m_Name: Triplanar
   m_Shader: {fileID: 4800000, guid: 156c0c2f75aa78c4581a80b6f9e8056b, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
