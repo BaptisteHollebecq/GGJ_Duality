@@ -171,6 +171,13 @@ MonoBehaviour:
   verticalMovementThreshold: 0.75
   minVerticalAngle: 25
   maxVerticalAngle: 30
+  leftPivot: {fileID: 7289834504331479980}
+  leftCamera: {fileID: 5980253889973654839}
+  rightPivot: {fileID: 3382967831238600670}
+  rightCamera: {fileID: 5980253890296336768}
+  biTransitionSpeed: 7
+  horizontalAngle: 170
+  verticulAngle: 90
   Up: {fileID: 5980253889328196528}
 --- !u!135 &5980253888948230193
 SphereCollider:

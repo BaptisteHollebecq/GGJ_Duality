@@ -28,6 +28,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "ActiveMecanismes",
+                    "type": "Button",
+                    "id": "06575cb4-8dd6-4816-972d-fc9d9d20dcb2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -57,7 +65,7 @@
                     "name": "",
                     "id": "ab2c5c8a-1a7f-42f5-9c4f-5cc7ae224b57",
                     "path": "<Gamepad>/leftTrigger",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "",
                     "action": "SwitchMode",
@@ -68,10 +76,21 @@
                     "name": "",
                     "id": "0f936f93-1a0f-4b85-808a-89e3d8399b20",
                     "path": "<Gamepad>/rightTrigger",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "",
                     "action": "SwitchMode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c30e0c6c-fd4f-4f6f-8601-795335b36086",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActiveMecanismes",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
