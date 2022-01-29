@@ -72,7 +72,7 @@ public class JosuahController : MonoBehaviour
 
             if (_underContact.HasValue)
             {
-                if (Vector3.Angle(_up, _underNormal.Value) > 1)
+                if (Vector3.Angle(_up, _underNormal.Value) > 1 && _transi)
                 {
                     transform.rotation = Quaternion.Slerp(transform.rotation,
                         Quaternion.FromToRotation(transform.up, _underNormal.Value) * transform.rotation, transitionSpeed * Time.fixedDeltaTime);
@@ -81,9 +81,9 @@ public class JosuahController : MonoBehaviour
                 {
                     _transi = false;
 
-                    if ((transform.position - _underContact.Value).magnitude > (characterHeight * 1.2f))
+                    if ((transform.position - _underContact.Value).magnitude > (characterHeight * 1.1f))
                         transform.position = Vector3.Lerp(transform.position,
-                            _underContact.Value + (_underNormal.Value).normalized * (characterHeight * 1.1f), transitionSpeed/2 * Time.deltaTime);
+                            _underContact.Value + (_underNormal.Value).normalized * (characterHeight), transitionSpeed/2 * Time.deltaTime);
                 }
             }
             else
@@ -142,6 +142,5 @@ public class JosuahController : MonoBehaviour
     {
         _rightStickInput = value.Get<Vector2>();
     }
-
 
 }
