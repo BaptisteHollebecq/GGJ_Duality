@@ -22,6 +22,11 @@ public class JosuahController : MonoBehaviour
     public float minVerticalAngle = 20;
     public float maxVerticalAngle = 45;
 
+    [Header("Bi Camera Settings")]
+    public Transform leftPivot;
+    public Transform rightPivot;
+
+
     [Header("Debug")]
     public Transform Up;
 
@@ -40,6 +45,9 @@ public class JosuahController : MonoBehaviour
     Vector3 _lastKnownPos;
 
     bool _transi;
+    bool _collide;
+
+    Coroutine _timerCollide;
 
 
     private void Awake()
@@ -50,12 +58,6 @@ public class JosuahController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_underNormal.HasValue)
-            Debug.DrawRay(transform.position, _underNormal.Value * 2, Color.green);
-
-        Debug.DrawRay(transform.position, _up * 2, Color.red);
-
-
         if (state == State.MOVE)
         {
             CheckUnder();
@@ -68,11 +70,12 @@ public class JosuahController : MonoBehaviour
 
             _rb.velocity = _movementDirection * movementSpeed;
 
+
             transform.Rotate(_up, (_rightStickInput.x * horizontalRotationSpeed), Space.World);
 
             if (_underContact.HasValue)
             {
-                if (Vector3.Angle(_up, _underNormal.Value) > 1 && _transi)
+                if (Vector3.Angle(_up, _underNormal.Value) > 1 && !_collide)
                 {
                     transform.rotation = Quaternion.Slerp(transform.rotation,
                         Quaternion.FromToRotation(transform.up, _underNormal.Value) * transform.rotation, transitionSpeed * Time.fixedDeltaTime);
@@ -81,15 +84,14 @@ public class JosuahController : MonoBehaviour
                 {
                     _transi = false;
 
-                    if ((transform.position - _underContact.Value).magnitude > (characterHeight * 1.1f))
+                    if ((transform.position - _underContact.Value).magnitude > (characterHeight * 1.1f) && !_collide)
                         transform.position = Vector3.Lerp(transform.position,
-                            _underContact.Value + (_underNormal.Value).normalized * (characterHeight), transitionSpeed/2 * Time.deltaTime);
+                            _underContact.Value + (_underNormal.Value).normalized * (characterHeight), transitionSpeed * Time.deltaTime);
                 }
             }
             else
             {
                 Vector3 testRotation = Vector3.Cross(transform.up, _movementDirection);
-                Debug.DrawLine(transform.position, transform.position + testRotation, Color.red, 5);
                 transform.Rotate(testRotation, (adjustementSpeed));
             }
 
@@ -104,14 +106,36 @@ public class JosuahController : MonoBehaviour
                 cameraPivot.Rotate(transform.right, (-_rightStickInput.y * verticalRotationSpeed), Space.World);
             }
         }
+        else
+        {
+
+        }
     }
 
     public void ResolveHeadPlacement(Vector3 Axis, Vector3 average)
     {
-        if (Vector3.Angle(_movementDirection, average) < 90 && !_transi)
+       
+        if (Vector3.Angle(_movementDirection, average) < 90 && !_transi && _movementDirection != Vector3.zero)
         {
+            Debug.DrawLine(transform.position, transform.position + average * 2, Color.green);
             transform.Rotate(Axis, (adjustementSpeed), Space.World);
+            _collide = true;
         }
+        else
+            Debug.DrawLine(transform.position, transform.position + average * 2, Color.red);
+    }
+
+    public void EndCollide()
+    {
+        if (_timerCollide != null)
+            StopCoroutine(_timerCollide);
+        _timerCollide = StartCoroutine(ResetCollide());
+    }
+
+    IEnumerator ResetCollide()
+    {
+        yield return new WaitForEndOfFrame();
+        _collide = false;
     }
 
     void CheckUnder()

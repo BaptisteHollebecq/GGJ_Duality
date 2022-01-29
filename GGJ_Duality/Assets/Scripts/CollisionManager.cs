@@ -31,4 +31,9 @@ public class CollisionManager : MonoBehaviour
             controller.ResolveHeadPlacement(tangent, collisionAverage);
         }
     }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        controller.EndCollide();
+    }
 }
