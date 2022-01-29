@@ -4,6 +4,8 @@ ShaderImporter:
   externalObjects: {}
   defaultTextures:
   - _RTLeft: {fileID: 2800000, guid: 55fdb60583a671f42bf659f5e7facfa0, type: 3}
+  - _TextureSample0: {fileID: 2800000, guid: 82974a8d6d1b67d4d981e1754fba04d5, type: 3}
+  - _eyeCloud: {fileID: 2800000, guid: c2ffc68514112214ca67d8d852cb3bb8, type: 3}
   nonModifiableTextures: []
   userData: 
   assetBundleName: 

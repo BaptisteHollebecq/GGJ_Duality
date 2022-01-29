@@ -31,6 +31,14 @@ Material:
         m_Texture: {fileID: 8400000, guid: ca88cc159153169419e45a74f2075a73, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _TextureSample0:
+        m_Texture: {fileID: 2800000, guid: 82974a8d6d1b67d4d981e1754fba04d5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _eyeCloud:
+        m_Texture: {fileID: 2800000, guid: c2ffc68514112214ca67d8d852cb3bb8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _texcoord:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -39,17 +47,19 @@ Material:
     - _EyesHardness: 0.06
     - _EyesOpening: 0.383
     - _Float0: 3
-    - _HardnessColor: 0.376
-    - _HardnessShape: 0.154
+    - _HardnessColor: 0.301
+    - _HardnessShape: 0.025
     - _L_EyeHardness: 0.06
     - _L_EyeOpening: 0.383
-    - _PolynomialSmooth: 0.265
+    - _Luminosity: 0.05
+    - _PolynomialSmooth: 0.034
     - _R_EyeHardness: 0.069366
     - _R_EyeOpening: 0.3176471
-    - _StepColor: 0.197
-    - _StepShape: 0.197
+    - _Saturation: -14.29
+    - _StepColor: 0.369
+    - _StepShape: 0.408
     - _Tiling: 3
-    - _Transi: 0.93
+    - _Transi: 0
     - _tiling: 1.96
     m_Colors:
     - _05: {r: 0, g: 0, b: 0, a: 0}
@@ -59,7 +69,7 @@ Material:
     - _R_EyePosition: {r: 0.88, g: 0.5, b: 0, a: 0}
     - _R_eyeRotation: {r: 0, g: 0, b: 0, a: 0}
     - _R_eyeRotation1: {r: 0, g: 0, b: 0, a: 0}
-    - _Vector0: {r: 0.5, g: 0.5, b: 0, a: 0}
+    - _Vector0: {r: -0.13, g: 0.5, b: 0, a: 0}
     - _Vector1: {r: 2, g: 2, b: 0, a: 0}
     - _Vector2: {r: -0.5, g: -0.5, b: 0, a: 0}
     - _eyeRotation: {r: 0, g: 0, b: 0, a: 0}
