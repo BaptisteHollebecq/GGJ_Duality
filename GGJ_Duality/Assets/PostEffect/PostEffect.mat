@@ -39,11 +39,17 @@ Material:
     - _EyesHardness: 0.06
     - _EyesOpening: 0.383
     - _Float0: 3
+    - _HardnessColor: 0.462
+    - _HardnessShape: 0.051
     - _L_EyeHardness: 0.06
     - _L_EyeOpening: 0.383
+    - _PolynomialSmooth: 0.222
     - _R_EyeHardness: 0.069366
     - _R_EyeOpening: 0.3176471
+    - _StepColor: 0.419
+    - _StepShape: 0.308
     - _Tiling: 3
+    - _Transi: 1
     - _tiling: 1.96
     m_Colors:
     - _05: {r: 0, g: 0, b: 0, a: 0}
