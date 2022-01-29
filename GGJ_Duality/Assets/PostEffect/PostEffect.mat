@@ -49,7 +49,7 @@ Material:
     - _StepColor: 0.197
     - _StepShape: 0.197
     - _Tiling: 3
-    - _Transi: 1
+    - _Transi: 0.93
     - _tiling: 1.96
     m_Colors:
     - _05: {r: 0, g: 0, b: 0, a: 0}
